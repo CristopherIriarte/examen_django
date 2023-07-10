@@ -1,0 +1,101 @@
+{% load static %}
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+    <title>{% block title %}TodoNada{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Logo de la empresa">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'venta' %}">Comprar</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'api' %}">Api</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class= "nav-link" href="{% url 'listar_videojuegos' %}">Lista juegos</a>
+                </li>
+                    <li class="nav-item">
+                <a class= "nav-link" href="{% url 'crear_videojuego' %}">Agregar juego</a>
+                </li>
+                <li class="nav-item">
+                    <a class= "nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'registrar' %}">Registrarse</a>
+                </li>
+                {% endif %}
+                </ul>
+                </div>
+            </div>
+            </nav>
+        </header>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="abajo navegador">
+            <div class="row">
+                <div class="col-sm-2"><a href="https://twitter.com/home?lang=es"><img
+                            src="{% static 'img/tw.png' %}" alt="" style="width:42px;height:42px;"></a>
+                </div>
+                <div class="col-sm-2"><a href="https://www.facebook.com/"><img src="{% static 'img/face.png' %}" alt=""
+                            style="width:42px;height:42px;"></a></div>
+                <div class="col-sm-2"><a href="https://www.instagram.com/"><img
+                            src="{% static 'img/ints.png' %}" alt="" style="width:42px;height:42px;"></a>
+                </div>
+                <div class="col-sm-2"><a href="{% url 'nosotros' %}">Nosotros</a></div>
+                <div class="col-sm-2"><a href="{% url 'contacto' %}">Contacto</a></div>
+            </div>
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+    crossorigin="anonymous"></script>
+{%block scripts %}
+<script src="{% static  'js/header.js' %}"> </script>
+<script src="{% static  'js/api.js' %}"> </script>
+{%endblock%}
+</body>
+</html>

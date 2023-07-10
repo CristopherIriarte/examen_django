@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div class="contenedor">
+
+    <div class="direccion">
+        <br>
+        <h4>Dirección</h4>
+            DUOC UC Padre Alonso de Ovalle 1586, Santiago Centro.
+    </div>
+    <br>
+    <div class="telefono">
+        <br>
+        <h4>Contacto</h4>
+        <p>Teléfono: (2) 4877 5902</p>
+        <p>Celular: (9) 7352 4622</p>
+    </div>
+    <br>
+    <div class="correo">
+        <br>
+        <h4>E-mail</h4>
+        <p>SoloNada@duocuc.cl</p>
+    </div>
+    <div class="volver">
+        <a href="{% url 'home' %}"><h5>Volver al inicio</h5></a>
+    </div>
+    <br>
+    <br>
+</div>
+<br>
+<br>
+<br>
+{% endblock %} 
+{%block scripts %}
+<script src="{% static  'js/header.js' %}"> </script>
+{%endblock%}

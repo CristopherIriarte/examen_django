@@ -1,0 +1,83 @@
+{% extends 'base.html' %} 
+{%load static %}
+{% block content %}
+
+<!-- -->
+{% if user.is_authenticated %}
+<p>Bienvenido</p>
+<p>Usuario:  - {{ user.username }}</p>
+<p>E-Mail - {{user.email}}</p>
+<br><br>
+{% endif %}
+
+<div class="carrusel">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">         
+        <img src="{% static 'img/asd.webp' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-block">
+          <h3>PlayStation 5</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <a href="productos.html">
+        <img src="{% static 'img/switch.jpg' %}" class="d-block w-100" alt="...">
+      </a>
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Nintendo Switch</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <a href="productos.html">
+        <img src="{% static 'img/xbox.jpg' %}" class="d-block w-100" alt="...">
+      </a>
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Xbox One</h3>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+  <br>
+  <div class="contenedor">
+    <h3>Destacados</h3>
+    <br>
+  </div>
+  <div class="asd">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="portfolio-item"> <a href="{% url 'productos' %}"> <img class="asdf" src="{% static 'img/ow2hd.webp' %}" alt="Overwatch"> </a> </div>
+      <p>Overwatch 2 Origins Edition</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="portfolio-item"> <a href="{% url 'productos' %}"> <img class="asdf" src="{% static 'img/bthd.jpg' %}" alt="Battlefield"> </a> </div>
+      <p>Assassin's Creed Syndicate</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="portfolio-item"> <a href="{% url 'productos' %}"> <img class="asdf" src="{% static 'img/frhd2.jpg' %}" alt="Farcry"> </a> </div>
+      <p>Far Cry Primal</p>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

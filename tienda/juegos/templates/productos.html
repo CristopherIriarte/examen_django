@@ -1,0 +1,62 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div class="asd">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/ow2hd.webp' %}" alt="Overwatch">  </a> </div>
+          <p>Overwatch 2 Origins Edition</p>
+      <p>$20.000</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/bthd.jpg' %}" alt="Battlefield"> </a> </div>
+          <p>Battlefield 3</p>
+      <p>$25.000</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/frhd2.jpg' %}" alt="Farcry"> </a> </div>
+          <p>Far Cry Primal</p>
+      <p>$30.000</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/acnh.jpg' %}" alt="ACNH"> </a> </div>
+          <p>Animal Crossing: New Horizons</p>
+          <p>$12.000</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/Minecraft_cover.png' %}" alt="Minecraft"> </a> </div>
+          <p>Minecraft</p>
+          <p>$55.000</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/cWZlv5HCWi4sGKuwVRO4c8Xg.webp' %}" alt="subnautica"> </a> </div>
+          <p>Resident Evil 4</p>
+          <p>$49.000</p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/hn.webp' %}" alt="Hollow knight"> </a> </div>
+            <p>Hollow Knight</p>
+            <p>$99.999</p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/EGS_Outlast_RedBarrels_S2_1200x1600-b02ebdfb4bcd3b1d608ab5b87257b3c4.jpg'%}" alt="Outlast"> </a> </div>
+            <p>Outlast</p>
+            <p>$8.000</p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="portfolio-item"> <a href="{% url 'venta' %}"> <img class="asdf" src="{% static 'img/sn.jpeg'%}" alt="subnautica"> </a> </div>
+            <p>Subnautica</p>
+            <p>$30.000</p>
+            </div>
+          </div>
+    </div>
+    {% endblock %} 
+{%block scripts %}
+<script src="{% static  'js/header.js' %}"> </script>
+{%endblock%}

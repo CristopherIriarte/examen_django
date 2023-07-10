@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Videojuego{% endblock %}
+
+{% block content %}
+  <h1>Eliminar Videojuego</h1>
+
+  <p>¿Estás seguro de que deseas eliminar el videojuego "{{ videojuego.titulo }}"?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+  </form>
+{% endblock %}

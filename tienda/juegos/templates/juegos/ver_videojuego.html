@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ videojuego.titulo }}{% endblock %}
+
+{% block content %}
+  <h1>{{ videojuego.titulo }}</h1>
+
+  <p>Título: {{ videojuego.titulo }}</p>
+  <p>Consola: {{ videojuego.consola }}</p>
+  <p>Precio: {{ videojuego.precio }}</p>
+
+  <a href="{% url 'editar_videojuego' videojuego.id %}">Editar</a>
+  <a href="{% url 'eliminar_videojuego' videojuego.id %}">Eliminar</a>
+{% endblock %}

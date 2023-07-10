@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- form -->
+        <form action="" method="post" id="form">
+            <div class="form-group">
+                <label for="txtNombrePokemon">Pokemon</label>
+                <input type="text" class="form-control" id="txtNombrePokemon" placeholder="Ingrese nombre...">
+                </div>
+                <button type="submit" id="btnCargar" value="Cargar" class="btn btn-outline-primary">Cargar Información</button>
+        </form>
+        <div id="info" class="text-center">
+            <h1></h1>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+{%block scripts %}
+<script src="{% static  'js/header.js' %}"> </script>
+<script src="{% static  'js/api.js' %}"> </script>
+{%endblock%}

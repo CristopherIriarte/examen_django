@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<h2>Formulario de compra</h2>
+	<form id="formulario" action="#" method="post">
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="telefono">Teléfono:</label>
+		<input type="tel" id="telefono" name="telefono" required>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+        <label for="juego">Juego:</label>
+		<select id="juego" name="juego">
+			<option value="overwatch">Overwatch</option>
+			<option value="battlefield">Battlefield 3</option>
+			<option value="farcry-primal">Far Cry Primal</option>
+			<option value="celeste">Celeste</option>
+			<option value="minecraft">Minecraft</option>
+			<option value="resident-evil">Resident Evil 4</option>
+            <option value="hollow-knight">Hollow Knight</option>
+            <option value="outlast">Outlast</option>
+            <option value="subnautica">Subnautica</option>
+		</select>
+        
+		<label for="consola">Plataforma:</label>
+		<select id="consola" name="consola">
+			<option value="ps5">PS5</option>
+			<option value="xbox">Xbox</option>
+			<option value="switch">Switch</option>
+		</select>
+
+		<label for="lugar">Lugar de retiro:</label>
+		<select id="lugar" name="lugar">
+			<option value="las-condes">Las Condes</option>
+			<option value="la-reina">La Reina</option>
+			<option value="vitacura">Vitacura</option>
+			<option value="estacion-central">Estación Central</option>
+			<option value="maipu">Maipú</option>
+			<option value="lo-prado">Lo Prado</option>
+		</select>
+
+		<input type="submit" value="Enviar">
+	</form>
+    <br>
+{% endblock %} 
+{%block scripts %}
+<script src="{% static  'js/header.js' %}"> </script>
+{%endblock%}
